@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenShift Migration Advisor 문서 한국어 번역</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --text: #151515;
+      --muted: #5f6368;
+      --border: #dedede;
+      --accent: #c9190b;
+      --code-bg: #f2f2f2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    .sidebar {
+      background: #171717;
+      color: #fff;
+      padding: 28px 22px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .brand {
+      display: block;
+      color: #fff;
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+    .brand-title {
+      display: block;
+      font-weight: 750;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+    .brand-subtitle {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      color: #c7c7c7;
+    }
+    .nav a {
+      display: block;
+      color: #efefef;
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .nav a:hover,
+    .nav a.active {
+      background: #2b2b2b;
+      color: #fff;
+      text-decoration: none;
+    }
+    .meta {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid #3b3b3b;
+      font-size: 12px;
+      color: #bdbdbd;
+    }
+    main {
+      padding: 48px 56px 80px;
+    }
+    .content {
+      max-width: 980px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 42px 48px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: 38px;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+    }
+    h2 {
+      margin-top: 42px;
+      padding-top: 10px;
+      font-size: 26px;
+      border-top: 1px solid var(--border);
+      letter-spacing: -0.03em;
+    }
+    h3 { margin-top: 26px; font-size: 20px; }
+    p { font-size: 17px; margin: 14px 0; }
+    li { margin: 6px 0; font-size: 16px; }
+    .lead {
+      font-size: 18px;
+      color: #333;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 18px 16px;
+      background: #fff;
+    }
+    .card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    pre {
+      background: var(--code-bg);
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      border: 1px solid #e4e4e4;
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 14px;
+    }
+    .notice {
+      border-left: 4px solid var(--accent);
+      background: #fff7f6;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 22px 0;
+    }
+    @media (max-width: 860px) {
+      .layout { display: block; }
+      .sidebar {
+        position: static;
+        height: auto;
+        padding: 22px 18px;
+      }
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+      }
+      main { padding: 22px 14px 50px; }
+      .content { padding: 28px 22px; border-radius: 12px; }
+      h1 { font-size: 30px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="/openshift-migration-advisor-docs-ko/">
+        <span class="brand-title">OpenShift Migration Advisor</span>
+        <span class="brand-subtitle">한국어 번역 문서</span>
+      </a>
+      <nav class="nav" aria-label="문서 목차">
+        <a class="active" href="/openshift-migration-advisor-docs-ko/">문서 홈</a>
+        <a href="/openshift-migration-advisor-docs-ko/overview.html">요약</a>
+        <a href="/openshift-migration-advisor-docs-ko/docs/01-migration-advisor.html">Migration Advisor</a>
+        <a href="/openshift-migration-advisor-docs-ko/docs/02-tutorial.html">튜토리얼</a>
+        <a href="/openshift-migration-advisor-docs-ko/docs/03-migration-forecaster.html">Migration Forecaster</a>
+        <a href="/openshift-migration-advisor-docs-ko/docs/04-aggregated-data-report.html">Aggregated Data Report</a>
+        <a href="/openshift-migration-advisor-docs-ko/docs/05-oma-estimations.html">OMA Estimations</a>
+      </nav>
+      <div class="meta">
+        <div>원문: kubev2v docs</div>
+        <div>License: CC BY 4.0</div>
+      </div>
+    </aside>
+
+    <main>
+      <article class="content">
+        <h1>OpenShift Migration Advisor 문서 한국어 번역</h1>
+        <p class="lead">OpenShift Migration Advisor 공식 문서를 한국어로 번역·정리한 웹 문서입니다.</p>
+
+        <ul>
+          <li>원문: <a href="https://kubev2v.github.io/openshift-migration-advisor-docs/docs/">https://kubev2v.github.io/openshift-migration-advisor-docs/docs/</a></li>
+          <li>원문 라이선스: CC BY 4.0</li>
+          <li>번역 기준일: 2026-06-16</li>
+        </ul>
+
+        <h2>빠른 이해</h2>
+        <p>OpenShift Migration Advisor는 VMware 환경을 OpenShift Virtualization으로 이전하기 전에 현재 vCenter 환경을 평가하고, VM, Host, Datastore, Network, Cluster 정보를 기반으로 migration readiness, sizing, migration issue 및 예상 시간을 검토할 수 있게 해주는 assessment 도구입니다.</p>
+
+        <h2>문서 목록</h2>
+        <div class="cards">
+          <a class="card" href="/openshift-migration-advisor-docs-ko/overview.html"><strong>요약</strong><span>전체 흐름과 핵심 개념을 빠르게 이해합니다.</span></a>
+          <a class="card" href="/openshift-migration-advisor-docs-ko/docs/01-migration-advisor.html"><strong>Migration Advisor 개요</strong><span>도구 목적, 수집 방식, 결과 활용 방식을 설명합니다.</span></a>
+          <a class="card" href="/openshift-migration-advisor-docs-ko/docs/02-tutorial.html"><strong>튜토리얼</strong><span>RVTools Flow와 Discovery Agent Flow를 비교합니다.</span></a>
+          <a class="card" href="/openshift-migration-advisor-docs-ko/docs/03-migration-forecaster.html"><strong>Migration Forecaster</strong><span>datastore pair benchmark를 통한 migration time 예측을 설명합니다.</span></a>
+          <a class="card" href="/openshift-migration-advisor-docs-ko/docs/04-aggregated-data-report.html"><strong>Aggregated Data Report</strong><span>수집 데이터, issue, warning, inventory report 의미를 정리합니다.</span></a>
+          <a class="card" href="/openshift-migration-advisor-docs-ko/docs/05-oma-estimations.html"><strong>OMA Estimations</strong><span>migration effort와 예상 시간 산정 방식을 설명합니다.</span></a>
+        </div>
+
+        <h2>주요 흐름</h2>
+        <pre><code>RVTools 업로드 또는 Discovery Agent 배포
+        ↓
+VMware inventory 수집
+        ↓
+Migration readiness / issue / warning 평가
+        ↓
+Sizing, 예상 시간, 사전 조치 항목 검토
+        ↓
+OpenShift Virtualization migration planning</code></pre>
+
+        <div class="notice">
+          이 저장소는 원문 문서를 기반으로 한 한국어 번역·정리본입니다. 제품 기능과 API는 원문 문서의 버전 및 업데이트에 따라 달라질 수 있습니다.
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
