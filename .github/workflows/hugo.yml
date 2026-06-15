@@ -52,7 +52,8 @@ jobs:
           npm install
           echo "$(pwd)/node_modules/.bin" >> "$GITHUB_PATH"
           echo "NODE_PATH=$(pwd)/node_modules" >> "$GITHUB_ENV"
-          npx postcss --version
+          npx --no-install postcss --version
+          node -e "console.log(require.resolve('autoprefixer'))"
 
       - name: Setup Pages
         id: pages
@@ -62,6 +63,14 @@ jobs:
         run: |
           go version
           hugo mod graph
+
+      - name: Install PostCSS dependencies for Docsy module
+        run: |
+          DOCSY_DIR="$(find "$HOME/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/google" -maxdepth 1 -type d -name 'docsy@*' | head -n 1)"
+          echo "Docsy module directory: ${DOCSY_DIR}"
+          test -n "${DOCSY_DIR}"
+          npm install --prefix "${DOCSY_DIR}" --no-audit --no-fund postcss postcss-cli autoprefixer
+          node -e "console.log(require.resolve('autoprefixer', { paths: ['${DOCSY_DIR}'] }))"
 
       - name: Build with Hugo
         env:
