@@ -1,7 +1,6 @@
 baseURL = 'https://yesol1108.github.io/openshift-migration-advisor-docs-ko/'
 languageCode = 'ko-kr'
 title = 'OpenShift Migration Advisor'
-theme = 'docsy'
 canonifyURLs = true
 
 [params]
