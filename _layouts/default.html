@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-title">OpenShift Migration Advisor</span>
+        <span class="brand-subtitle">한국어 번역 문서</span>
+      </a>
+
+      <nav class="nav" aria-label="문서 목차">
+        <a href="{{ '/' | relative_url }}">문서 홈</a>
+        <a href="{{ '/overview.html' | relative_url }}">요약</a>
+        <a href="{{ '/docs/01-migration-advisor.html' | relative_url }}">Migration Advisor</a>
+        <a href="{{ '/docs/02-tutorial.html' | relative_url }}">튜토리얼</a>
+        <a href="{{ '/docs/03-migration-forecaster.html' | relative_url }}">Migration Forecaster</a>
+        <a href="{{ '/docs/04-aggregated-data-report.html' | relative_url }}">Aggregated Data Report</a>
+        <a href="{{ '/docs/05-oma-estimations.html' | relative_url }}">OMA Estimations</a>
+      </nav>
+
+      <div class="sidebar-meta">
+        <p>원문: kubev2v docs</p>
+        <p>License: CC BY 4.0</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <article class="doc">
+        {{ content }}
+      </article>
+    </main>
+  </div>
+</body>
+</html>
