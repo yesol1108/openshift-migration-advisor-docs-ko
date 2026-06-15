@@ -1,6 +1,6 @@
 module github.com/yesol1108/openshift-migration-advisor-docs-ko
 
-go 1.24.10
+go 1.23.0
 
 require (
 	github.com/google/docsy v0.13.0 // indirect
