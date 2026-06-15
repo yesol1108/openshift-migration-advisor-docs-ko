@@ -48,7 +48,11 @@ jobs:
           hugo version
 
       - name: Install frontend build tools
-        run: npm install -g sass postcss postcss-cli autoprefixer
+        run: |
+          npm install
+          echo "$(pwd)/node_modules/.bin" >> "$GITHUB_PATH"
+          echo "NODE_PATH=$(pwd)/node_modules" >> "$GITHUB_ENV"
+          npx postcss --version
 
       - name: Setup Pages
         id: pages
@@ -63,6 +67,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          NODE_PATH: ${{ github.workspace }}/node_modules
         run: |
           hugo \
             --gc \
