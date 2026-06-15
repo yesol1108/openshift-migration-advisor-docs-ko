@@ -47,8 +47,8 @@ jobs:
           sudo dpkg -i "${{ runner.temp }}/hugo.deb"
           hugo version
 
-      - name: Install Dart Sass
-        run: npm install -g sass
+      - name: Install frontend build tools
+        run: npm install -g sass postcss postcss-cli autoprefixer
 
       - name: Setup Pages
         id: pages
