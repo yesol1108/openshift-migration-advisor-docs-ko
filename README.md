@@ -16,7 +16,7 @@ https://yesol1108.github.io/openshift-migration-advisor-docs-ko/
 
 ## 문서 목록
 
-- [문서 홈](index.md)
+- [문서 홈](index.html)
 - [요약](overview.md)
 - [Migration Advisor 개요](docs/01-migration-advisor.md)
 - [튜토리얼: RVTools Flow / Discovery Agent Flow](docs/02-tutorial.md)
