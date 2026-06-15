@@ -12,7 +12,4 @@
 2. [튜토리얼: RVTools Flow / Discovery Agent Flow](docs/02-tutorial.md)
 3. [Migration Forecaster](docs/03-migration-forecaster.md)
 4. [Aggregated Data Report](docs/04-aggregated-data-report.md)
-5. [OMA Estimations](docs/05-oma-estimations.md)
-6. [파트너 공유용 요약](partner-summary.md)
-
-> 참고: 원문 사이트의 `Cluster Architecture`, `Cost Estimation For Partners` 페이지는 문서 목록에는 표시되지만, 작성 시점에 일부 페이지 본문 fetch가 불안정하여 별도 번역 대상으로 분리했습니다. 원문 본문 확보 후 추가
+5. [OMA
