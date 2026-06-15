@@ -39,7 +39,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Hugo Extended
         run: |
@@ -64,12 +64,14 @@ jobs:
           go version
           hugo mod graph
 
-      - name: Install PostCSS dependencies for Docsy module
+      - name: Link frontend dependencies into Docsy module
         run: |
           DOCSY_DIR="$(find "$HOME/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/google" -maxdepth 1 -type d -name 'docsy@*' | head -n 1)"
           echo "Docsy module directory: ${DOCSY_DIR}"
           test -n "${DOCSY_DIR}"
-          npm install --prefix "${DOCSY_DIR}" --no-audit --no-fund postcss postcss-cli autoprefixer
+          sudo chown -R "$USER":"$USER" "${DOCSY_DIR}"
+          rm -rf "${DOCSY_DIR}/node_modules"
+          ln -s "${GITHUB_WORKSPACE}/node_modules" "${DOCSY_DIR}/node_modules"
           node -e "console.log(require.resolve('autoprefixer', { paths: ['${DOCSY_DIR}'] }))"
 
       - name: Build with Hugo
